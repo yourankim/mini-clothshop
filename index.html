@@ -13,28 +13,21 @@
     </header>
     <nav>
         <div class="filter-by-cloth">
-            <button><div class="cloth-img"><img src="imgs/blue_p.png" alt="pants" /></div></button>
-            <button><div class="cloth-img"><img src="imgs/blue_s.png" alt="skirt" /></div></button>
-            <button><div class="cloth-img"><img src="imgs/blue_t.png" alt="tshirt" /></div></button>
+            <button class="cloth-btn" ><div class="cloth-img"><img data-type="pants" src="imgs/blue_p.png" alt="pants" /></div></button>
+            <button class="cloth-btn"><div class="cloth-img"><img data-type="skirt" src="imgs/blue_s.png" alt="skirt" /></div></button>
+            <button class="cloth-btn"><div class="cloth-img"><img data-type="tshirt" src="imgs/blue_t.png" alt="tshirt" /></div></button>
         </div>
         <div class="filter-by-color">
-            <button data-color="blue">blue</button>
-            <button data-color="yellow">yellow</button>
-            <button data-color="pink">pink</button>
+            <button class="color-btn" data-color="blue">blue</button>
+            <button class="color-btn" data-color="yellow">yellow</button>
+            <button class="color-btn" data-color="pink">pink</button>
         </div>
         
     </nav>
     <section>
-        <ul>
-            <li>   
-                <div class="cloth-img"><img src="imgs/blue_t.png" alt="tshirt" /></div>
-                <span>female, large size</span>
-            </li>
-            <li>
-                <div class="cloth-img"><img src="imgs/yellow_p.png" alt="pants"></div>
-                <span>male, small size</span>
-            </li>
+        <ul class="clothes">
         </ul>
     </section>
+    <script src="index.js"></script>
 </body>
 </html>
