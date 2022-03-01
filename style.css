@@ -1,0 +1,88 @@
+:root {
+  --pink: #f381ba;
+  --blue: #4b8bca;
+  --yellow: #ecdb41;
+}
+
+body {
+  background-color: #21664c;
+  padding: 5% 25%;
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  flex: 1 1;
+  justify-content: space-around;
+  height: 60px;
+}
+
+.filter-by-cloth button {
+  background-color: transparent;
+  height: 50px;
+  width: auto;
+  border: 0 solid transparent;
+}
+
+.filter-by-color {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.filter-by-color button {
+  height: 50px;
+  min-width: 60px;
+  border: 0 solid transparent;
+  border-radius: 2px;
+  font-size: 1.1rem;
+  color: rgb(61, 60, 60);
+}
+
+.filter-by-color button[data-color='pink'] {
+  background-color: var(--pink);
+}
+
+.filter-by-color button[data-color='blue'] {
+  background-color: var(--blue);
+}
+
+.filter-by-color button[data-color='yellow'] {
+  background-color: var(--yellow);
+}
+
+.cloth-img {
+  height: 60px;
+  width: auto;
+  object-fit: cover;
+}
+
+.cloth-img > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+section {
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin: 10px;
+  height: 70px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+}

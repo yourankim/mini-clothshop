@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./style.css">
     <title>MINI CLOTH SHOP</title>
 </head>
 <body>
@@ -12,24 +12,27 @@
         <img src="imgs/logo.png" alt="mini clothshop logo"/>
     </header>
     <nav>
-        <button><img src="imgs/blue_p.png" alt="pants"/></button>
-        <button><img src="imgs/blue_s.png" alt="skirt"/></button>
-        <button><img src="imgs/blue_t.png" alt="tshirt"/></button>
-        <button>blue</button>
-        <button>yellow</button>
-        <button>pink</button>
+        <div class="filter-by-cloth">
+            <button><div class="cloth-img"><img src="imgs/blue_p.png" alt="pants" /></div></button>
+            <button><div class="cloth-img"><img src="imgs/blue_s.png" alt="skirt" /></div></button>
+            <button><div class="cloth-img"><img src="imgs/blue_t.png" alt="tshirt" /></div></button>
+        </div>
+        <div class="filter-by-color">
+            <button data-color="blue">blue</button>
+            <button data-color="yellow">yellow</button>
+            <button data-color="pink">pink</button>
+        </div>
+        
     </nav>
     <section>
         <ul>
-            <li>
-                <img src="imgs/blue_t.png" alt="tshirt"/>
-                <span>female</span>
-                <span>large</span>
+            <li>   
+                <div class="cloth-img"><img src="imgs/blue_t.png" alt="tshirt" /></div>
+                <span>female, large size</span>
             </li>
             <li>
-                <img src="imgs/yellow_p.png" alt="pants"/>
-                <span>male</span>
-                <span>small</span>
+                <div class="cloth-img"><img src="imgs/yellow_p.png" alt="pants"></div>
+                <span>male, small size</span>
             </li>
         </ul>
     </section>
