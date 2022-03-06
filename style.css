@@ -1,88 +1,104 @@
 :root {
+  /* color */
   --pink: #f381ba;
   --blue: #4b8bca;
   --yellow: #ecdb41;
+  --green: #21664c;
+  --white: #ffffff;
+
+  /* size */
+  --size-button: 60px;
+  --font-size: 18px;
+  --base-space: 8px;
+  --size-border-radius: 4px;
+  --size-cloth: 60%;
+  --size-thumbnail: 50px;
+
+  /* animation */
+  --animation-duration: 0.3s;
 }
 
 body {
-  background-color: #21664c;
-  padding: 5% 25%;
+  height: 100vh;
+  background-color: var(--green);
   box-sizing: border-box;
-}
-
-header {
-  text-align: center;
-}
-
-nav {
   display: flex;
-  flex: 1 1;
-  justify-content: space-around;
-  height: 60px;
-}
-
-.filter-by-cloth button {
-  background-color: transparent;
-  height: 50px;
-  width: auto;
-  border: 0 solid transparent;
-}
-
-.filter-by-color {
-  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
-}
-.filter-by-color button {
-  height: 50px;
-  min-width: 60px;
-  border: 0 solid transparent;
-  border-radius: 2px;
-  font-size: 1.1rem;
-  color: rgb(61, 60, 60);
 }
 
-.filter-by-color button[data-color='pink'] {
+.logo {
+  cursor: pointer;
+  transition: all var(--animation-duration) ease;
+}
+
+.btn:hover,
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: all var(--animation-duration) ease;
+  margin-right: var(--base-space);
+}
+
+.imgBtn {
+  width: var(--size-button);
+  height: var(--size-button);
+}
+
+.colorBtn {
+  font-size: var(--font-size);
+  padding: calc(var(--base-space) * 2);
+  border-radius: var(--size-border-radius);
+}
+
+/* class 대신 dataset 쓰는 방법은?(버튼 이벤트까지 고려했을 때) */
+.colorBtn[data-color='pink'] {
   background-color: var(--pink);
 }
 
-.filter-by-color button[data-color='blue'] {
-  background-color: var(--blue);
+.colorBtn[data-color='blue'] {
+  background: var(--blue);
 }
 
-.filter-by-color button[data-color='yellow'] {
-  background-color: var(--yellow);
+.colorBtn[data-color='yellow'] {
+  background: var(--yellow);
 }
 
-.cloth-img {
-  height: 60px;
-  width: auto;
-  object-fit: cover;
-}
-
-.cloth-img > img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-section {
-  margin: 0 auto;
-}
-
-ul {
+.clothes {
+  width: var(--size-cloth);
+  height: var(--size-cloth);
   list-style-type: none;
-  padding: 0;
+  padding-left: 0;
+  overflow-y: scroll;
 }
 
-li {
-  background-color: #ffffff;
-  border-radius: 5px;
-  margin: 10px;
-  height: 70px;
+.cloth {
+  background-color: var(--white);
   display: flex;
-  justify-content: left;
   align-items: center;
-  gap: 20px;
-  padding: 0 20px;
+  padding: var(--base-space);
+  margin-bottom: var(--base-space);
+}
+
+.item__thumnail {
+  width: var(--size-thumbnail);
+  height: var(--size-thumbnail);
+}
+
+.item__description {
+  margin-left: var(--base-space);
+  font-size: var(--font-size);
 }
