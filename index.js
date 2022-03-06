@@ -113,12 +113,19 @@ const getClothImageUri = (color, type) => {
   return `./imgs/${color}_${type.slice(0,1)}.png`;
 }
 
-const state = { clothes: clothes};
-
 const $target = document.querySelector(".clothes");
 
-const render = (clothes) => {
-  $target.innerHTML = `${clothes.map(({color, type, gender, size}) => {
+let state = { clothes, filteredClothes:clothes };
+
+const setState = (newState) => {
+  state = {...state, ...newState};
+  render();
+}
+
+// 인수로 데이터를 넘겨받을 필요없이 밖에서 선언한 state 가져와서 사용하기. 왜?
+const render = () => {
+  const { filteredClothes } = state;
+  $target.innerHTML = `${filteredClothes.map(({color, type, gender, size}) => {
     return `<li>
       <div class="cloth-img"><img src='${getClothImageUri(color, type)}'/></div>
       <span> ${gender}, ${size} </span>
@@ -126,30 +133,23 @@ const render = (clothes) => {
   }).join('')}`
 };
 
-const setState = (newState) => {
-  state = {state, newState};
-  console.log(state);
-  render(state.clothes);
-}
+// event delegation: closest 사용. 
+// https://ko.javascript.info/event-delegation
+document.querySelector("nav").addEventListener("click", e => {
+  const button = e.target.closest('BUTTON');
+  if (!button) {
+    return;
+  }
+  const filter = button.dataset.filter;
+  const selectedValue = button.dataset[filter];
+  const { clothes } = state;
+  //filter는 순수함수?
+  const filteredClothes = clothes.filter(cloth => cloth[filter] === selectedValue);
+  // render를 바로 호출하지 말고! 근데 왜??
+  setState({ filteredClothes });
+})
 
-const filterByClothButtons = document.querySelectorAll(".cloth-btn");
-filterByClothButtons.forEach(button => {
-  button.addEventListener("click", e => {
-    const type = e.target.dataset.type;
-    const filteredResult = state.clothes.filter(cloth => cloth.type === type);
-    render(filteredResult); 
-  }); 
-});
 
-const filterByColorButtons = document.querySelectorAll(".color-btn");
-filterByColorButtons.forEach(button => {
-  button.addEventListener("click", e => {
-    const color = e.target.dataset.color;
-    const filteredResult = state.clothes.filter(cloth => cloth.color === color);
-    render(filteredResult); 
-  }); 
-});
-
-render(clothes);
+render();
 
 
