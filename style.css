@@ -64,16 +64,15 @@ body {
   border-radius: var(--size-border-radius);
 }
 
-/* class 대신 dataset 쓰는 방법은?(버튼 이벤트까지 고려했을 때) */
-.colorBtn[data-color='pink'] {
+.pink {
   background-color: var(--pink);
 }
 
-.colorBtn[data-color='blue'] {
+.blue {
   background: var(--blue);
 }
 
-.colorBtn[data-color='yellow'] {
+.yellow {
   background: var(--yellow);
 }
 
@@ -101,4 +100,8 @@ body {
 .item__description {
   margin-left: var(--base-space);
   font-size: var(--font-size);
+}
+
+.invisible {
+  display: none;
 }
