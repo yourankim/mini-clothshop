@@ -6,9 +6,9 @@ const setState = (newState) => {
 }
 
 const render = () => {
-  const { filteredClothes } = state;
+  const { clothes } = state;
   const $target = document.querySelector(".clothes");
-  $target.innerHTML = `${filteredClothes.map((cloth) => createHTMLString(cloth)).join('')}`
+  $target.innerHTML = `${clothes.map((cloth) => createHTMLString(cloth)).join('')}`
 };
 
 const createHTMLString = (cloth) => {
@@ -23,7 +23,7 @@ const setEventListener = () => {
   const $logo = document.querySelector('.logo');
   const $btns= document.querySelector('.btns');
   
-  $logo.addEventListener('click', e => setState({ filteredClothes: state.clothes }));
+  $logo.addEventListener('click', e => setState({ clothes: state.clothes }));
   $btns.addEventListener("click", e => onButtonClick(e));
 }
 
@@ -52,7 +52,7 @@ const loadClothes = async () => {
   try {
     const response = await fetch('/data/data.json'); 
     const { clothes } = await response.json(); // response의 body를 json object로 변환
-    setState({ clothes, filteredClothes: clothes });
+    setState({ clothes });
   }catch(e) {
     console.error(e);
   }
