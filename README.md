@@ -4,6 +4,17 @@
 
 html + css + javascript + fetch json data
 
+![mini clothshop screen shot GIF](mini-clothshop.gif)
+
+## 구현 기능
+
+- 초기화면: fetch 해온 옷 목록을 보여준다. (fetch, async~await)
+- 목록 길이가 리스트 영역을 초과할 경우 목록 영역 내에서만 스크롤을 내려 하단 내용을 볼 수 있다.(overflow-y: scroll)
+- 각 버튼 위로 마우스를 올리면 버튼이 커진다.(transform, transition)
+- 옷 이미지 버튼을 누르면 해당 종류에 해당하는 옷만 보여준다.(click event, filter or display none)
+- 색상 버튼을 누르면 해당 색상의 옷만 보여준다.(click event, filter or display none)
+- 가게 이미지 버튼을 누르면 전체 옷 목록으로 돌아간다. (click event, filter or display none)
+
 ---
 
 ## 진행과정
@@ -112,6 +123,14 @@ const render = () => {
 
 그리고 `filter`를 비롯한 몇몇 Array 메서드가 원본 배열을 변경(mutate)하지 않고 조건에 맞는 값만 배열로 반환한다는 것을 기억하자.
 functional programming에 대한 개념도 조금씩 익혀봐야겠다.
+
+### CSS
+
+갈 길이 멀다. CSS는 강의 보면서 거의 새로 쓴 거나 다름없다.
+마크업할 때도 불필요한 요소 중복이 많았다. 그러다보니 스타일 적용도 어디에 해야할지 헷갈렸고.
+요소간의 간격을 설정할 때도 flex를 남발했는데,
+margin이나 padding만으로도 깔끔하게 간격 조정을 할 수 있음을 배웠다.
+색상코드, 사이즈 등은 꼭 변수에 담아놓고 사용하기.
 
 ---
 
